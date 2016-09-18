@@ -9,67 +9,76 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.fabiana.laboratorio04.MainActivity">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="OK"
-        android:id="@+id/button"
-        android:layout_alignBaseline="@+id/button2"
-        android:layout_alignBottom="@+id/button2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="102dp"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CANCELAR"
-        android:id="@+id/button2"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="102dp" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="117dp"
-        android:background="@mipmap/ic_launcher"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Seja bem vindo ao Android"
-        android:id="@+id/textView"
+        android:text="@string/bem_vindo_ao_android"
+        android:id="@+id/bemvindotextView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText"
-        android:layout_below="@+id/imageView"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bemvindotextView"
         android:layout_centerHorizontal="true"
-        android:hint="Usuário"/>
+        android:weightSum="1">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText2"
-        android:layout_below="@+id/editText"
-        android:layout_centerHorizontal="true"
-        android:hint="Senha"/>
+        <ImageView
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:layout_gravity="center_horizontal"
+            android:src="@android:drawable/sym_def_app_icon"
+            android:layout_weight="0.24" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView2"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/usuarioEditText"
+            android:layout_weight="0.24"
+            android:hint="@string/usuario" />
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:ems="10"
+            android:id="@+id/senhaEditText"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.24"
+            android:hint="Senha" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/resultadotextView"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.24" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.24">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/acessar"
+                android:id="@+id/acessoButton"
+                android:layout_weight="1" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cancelar"
+                android:id="@+id/limparbutton"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>
